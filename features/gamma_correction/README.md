@@ -28,4 +28,4 @@ test.py 如有不懂可参考tests目录下老师写的
 
 整个项目的测试可以在整个项目根目录使用
 
-pytest --cov-report=html --cov=relaxrender --ignore=tests/test_relaxrender.py tests
+`pytest --cov-report=html --cov=relaxrender --ignore=tests/test_relaxrender.py tests`
