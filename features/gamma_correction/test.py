@@ -1,11 +1,15 @@
 import unittest
-import numpy as np
-from .render import *
-from skimage import data
 
-class Test(unittest.TestCase):
-    def test_array(self):    #根据接口命名测试的函数名 如 test_size 
-        img = data.coffee()
-        render_array_to_array(img,1/2.2)           #函数内调用我们的类 
-        
-        
+import gamma_correction as gamma
+from skimage import data,io
+import matplotlib.pyplot as plt
+import numpy as np
+
+class Test_gamma_correction(unittest.TestCase):
+	
+	def test_gamma_correction(self):
+		img0 = io.imread('1.png')
+		img11 = io.imread('11.png')
+		img1 = gamma.Gamma_correction().render_array_to_array(img0,0.3)
+		
+		self.assertEqual(img1.any(),img11.any())
